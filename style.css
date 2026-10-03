@@ -1998,3 +1998,433 @@ button {
     }
 
 }
+/* =====================================================
+   HERO TEAM PHOTO
+===================================================== */
+
+.hero-photo-card {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(110, 80, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hero-photo-card img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .hero-photo-card {
+        max-width: 100%;
+        border-radius: 18px;
+    }
+
+    .hero-photo-card img {
+        height: 280px;
+    }
+
+}
+/* =====================================================
+   CREATIVE HERO PHOTO
+===================================================== */
+
+.hero-photo-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    padding: 20px;
+}
+
+/* BIG AMBIENT GLOW */
+
+.photo-glow {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(125, 92, 255, 0.45),
+            transparent 65%
+        );
+
+    filter: blur(45px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+/* PHOTO CARD */
+
+.hero-photo-card {
+    position: relative;
+    width: 100%;
+    height: 430px;
+
+    border-radius: 26px;
+    overflow: hidden;
+
+    background: #080b14;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.55),
+        0 0 50px rgba(100, 80, 255, 0.15);
+
+    transform: rotate(1deg);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+    
+    z-index: 2;
+}
+
+
+/* GRADIENT BORDER EFFECT */
+
+.hero-photo-card::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        transparent 35%,
+        transparent 65%,
+        #00d9ff
+    );
+
+    border-radius: 28px;
+    z-index: -1;
+}
+
+
+/* IMAGE */
+
+.hero-photo-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.7s ease;
+}
+
+
+/* DARK OVERLAY */
+
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 7, 13, 0.05) 30%,
+            rgba(5, 7, 13, 0.35) 60%,
+            rgba(5, 7, 13, 0.95) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* HOVER */
+
+.hero-photo-card:hover {
+    transform: rotate(0deg) translateY(-8px);
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.65),
+        0 0 60px rgba(125, 92, 255, 0.25);
+}
+
+.hero-photo-card:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =====================================================
+   TOP BADGE
+===================================================== */
+
+.photo-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 15px;
+
+    border-radius: 50px;
+
+    background: rgba(5, 7, 13, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    backdrop-filter: blur(12px);
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    z-index: 4;
+}
+
+
+/* LIVE DOT */
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #7c5cff;
+
+    box-shadow:
+        0 0 10px #7c5cff,
+        0 0 20px rgba(124, 92, 255, 0.7);
+
+    animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 0.6;
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO INFORMATION
+===================================================== */
+
+.photo-info {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 22px;
+
+    z-index: 4;
+}
+
+.photo-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #b7a8ff;
+
+    font-weight: 700;
+}
+
+.photo-info h3 {
+    margin: 7px 0 4px;
+
+    color: white;
+
+    font-size: 27px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+.photo-info h3 span {
+    color: #a78bfa;
+}
+
+.photo-info p {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FLOATING CARD
+===================================================== */
+
+.photo-floating-card {
+    position: absolute;
+
+    right: -5px;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 12px 16px;
+
+    background: rgba(10, 13, 25, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    z-index: 6;
+
+    animation: floatingCard 3s ease-in-out infinite;
+}
+
+.floating-icon {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(124, 92, 255, 0.18);
+
+    font-size: 18px;
+}
+
+.photo-floating-card strong {
+    display: block;
+
+    color: white;
+
+    font-size: 11px;
+}
+
+.photo-floating-card small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 9px;
+}
+
+@keyframes floatingCard {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* =====================================================
+   DECORATIVE DOTS
+===================================================== */
+
+.floating-dot {
+    position: absolute;
+
+    border-radius: 50%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.dot-one {
+    width: 12px;
+    height: 12px;
+
+    top: 5px;
+    right: 35px;
+
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 20px #8b5cf6;
+}
+
+.dot-two {
+    width: 7px;
+    height: 7px;
+
+    bottom: 15px;
+    left: 5px;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-photo-wrapper {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .hero-photo-card {
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .photo-info h3 {
+        font-size: 21px;
+    }
+
+    .photo-floating-card {
+        right: 0;
+        bottom: 20px;
+    }
+
+    .photo-badge {
+        top: 14px;
+        left: 14px;
+        font-size: 9px;
+    }
+
+}
